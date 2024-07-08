@@ -16,12 +16,16 @@ class ResponsiveTextfield extends StatelessWidget {
   final Color buttonColor;
   final Icon prefixIcon;
   final String hintText;
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: buttonColor,
       height: height,
       width: width,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12.0),
+        color: buttonColor,
+      ),
       child: TextFormField(
         controller: textEditingController,
         textCapitalization: TextCapitalization.words,

@@ -6,12 +6,14 @@ class ResponsiveButton extends StatelessWidget {
       required this.callback,
       required this.height,
       required this.width,
-      required this.buttonColor});
+      required this.buttonColor,
+      required this.text});
 
   final VoidCallback callback;
   final double height;
   final double width;
   final Color buttonColor;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -19,7 +21,13 @@ class ResponsiveButton extends StatelessWidget {
       child: Container(
         height: height,
         width: width,
-        color: buttonColor,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12.0),
+          color: buttonColor,
+        ),
+        child: Center(
+          child: Text(text),
+        ),
       ),
     );
   }

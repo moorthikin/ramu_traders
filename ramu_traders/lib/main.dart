@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ramu_traders/pages/registerPage.dart';
+//import 'package:ramu_traders/pages/registerPage.dart';
+//import 'package:ramu_traders/pages/splash.dart';
+import 'package:ramu_traders/pages/splashScreen.dart';
 //import 'package:ramu_traders/pages/splash.dart';
 
 void main() {
@@ -13,7 +15,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: RegisterPage(),
+      debugShowCheckedModeBanner: false,
+      home: SplashScreen(),
     );
   }
 }
