@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 //import 'package:google_fonts/google_fonts.dart';
 import 'package:ramu_traders/const/colors.dart';
 import 'package:ramu_traders/const/images.dart';
+import 'package:ramu_traders/const/routes.dart';
 import 'package:ramu_traders/const/typograpy.dart';
 import 'package:ramu_traders/util/custom_button.dart';
 import 'package:ramu_traders/util/responsiveText_button.dart';
@@ -31,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 70.0,
             ),
             Padding(
-              padding: EdgeInsets.only(left: 25.0),
+              padding: EdgeInsets.only(left: 10.0),
               child: Image.asset(
                 AppImages.loginImage,
                 height: 200.0,
@@ -39,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 25.0),
+              padding: EdgeInsets.only(left: 10.0),
               child: Text(
                 "Welocme Back!",
                 style: Typograpy.primary,
@@ -52,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 20.0),
+                  padding: EdgeInsets.only(left: 15.0),
                   child: ResponsiveTextfield(
                       textEditingController: emailController,
                       height: 55.0,
@@ -65,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 30.0,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 20.0),
+                  padding: EdgeInsets.only(left: 15.0),
                   child: ResponsiveTextfield(
                       textEditingController: passwordController,
                       height: 55.0,
@@ -85,8 +86,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   Text("Don't have an Account? "),
                   ResponsiveTextButton(
-                      callback: () {},
-                      textColor: secondaryColor,
+                      callback: () {
+                        Navigator.popAndPushNamed(context, MyRoutes().register);
+                      },
+                      textColor: primary,
                       textSize: 20.0,
                       text: "Register")
                 ],
@@ -96,7 +99,9 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 20,
             ),
             ResponsiveButton(
-                callback: () {},
+                callback: () {
+                  Navigator.pushNamed(context, MyRoutes().home);
+                },
                 height: 50.0,
                 width: 150.0,
                 text: "Login",
